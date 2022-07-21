@@ -1,0 +1,177 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+/*
+
+#270245 dark purple
+#871A85 purple
+#FF2941 soft red
+#FEFF38 yellow
+#FE18D3 pink
+#4206F1 blue/purple
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+html {
+ 
+  height: 100%;
+  background-image: url("img/background.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+  
+
+
+#mainMenu {
+  max-width: 960px;
+  mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+#mainMenu ul {
+  text-align: center;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+#mainMenu ul li {
+  display: inline-block;
+}
+
+#mainMenu ul li a {
+  padding: 18px;
+  font-family: "Open Sans";
+  text-transform:uppercase;
+  color: #FFF;
+  font-size: 18px;
+  text-decoration: none;
+  display: block;
+}
+#mainMenu ul li a:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+  color: #FFF;
+}
+
+
+.fullpageMenu{
+  position: fixed;
+  top: -200%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #111;
+  transition: 0.5s;
+}
+.fullpageMenu.active {
+  top: 0;
+}
+
+.fullpageMenu #consoleNav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+}
+.fullpageMenu #consoleNav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  
+}
+.fullpageMenu #consoleNav ul li {
+  position: relative;
+  list-style: none;
+  padding: 0 20px;
+  margin: 5px 0;
+  overflow: hidden;
+  display: table;
+}
+.fullpageMenu #consoleNav ul li a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+  font-size: 2em;
+  line-height: 1em;
+  padding-top: 12px;
+  display: inline-block;
+  text-transform: uppercase;
+  transition: 0.5s ease-in-out;
+}
+.fullpageMenu #consoleNav ul li a:before {
+  content: attr(data-text);
+  position: absolute;
+  bottom: -120%;
+  left: 0;
+  color: #FFF;
+}
+.fullpageMenu #consoleNav ul li:hover a {
+  transform: translateY(-100%);
+  color: #fff
+}
+.fullpageMenu #consoleNav ul li:before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #FF2941;
+  transition: transform 0.5s ease-in-out;
+  transform: scaleY(0);
+  transform-origin: bottom;
+}
+.fullpageMenu #consoleNav ul li:hover:before {
+  transition: transform 0.5s ease-in-out;
+  transform: scaleY(1);
+  transform-origin: top;
+}
+#consoleNav img 
+{
+  width: 240px;
+}
+
+.menuicon {
+  position: fixed;
+  top: 50%;
+  right: 50%;
+  width: 100px;
+  height: 100px;
+  background: url(img/video-arcade.png);
+  background-size: 60px ;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: 10px;
+}
+.menuicon.active {
+  background: url(img/exit.png);
+  background-size: 40px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: 10px;
+}
+
+@media (max-width: 991px) {
+  .banner {
+    display: none;
+  }
+}
+
+
+
+
