@@ -1,4 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@font-face {
+  font-family: neon;
+  src: url(fonts/neon_pixel-7.ttf);
+}
 
 /*
 
@@ -17,27 +21,39 @@
 }
 
 
-html {
- 
-  height: 100%;
-  background-image: url("img/background.jpg");
+body {
+ background-color: #101010;
+}
+
+header {
+  height: 100vh;
+  background-image: url("img/background3.jpg");
   background-attachment: fixed;
-  background-position: center;
+  background-position-y: top;
   background-repeat: no-repeat;
   background-size: cover;
 }
-  
+#logo {
+  position: fixed;
+  top: 4%;
+  left: 4%;
+}
 
-
+#logo img {
+  width: 90px;
+}
 #mainMenu {
+  display: block;
   max-width: 960px;
   mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
   margin: 0 auto;
-  padding: 20px 0;
 }
 
 #mainMenu ul {
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
   background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
 }
@@ -51,7 +67,7 @@ html {
   font-family: "Open Sans";
   text-transform:uppercase;
   color: #FFF;
-  font-size: 18px;
+  font-size: 1.2em;
   text-decoration: none;
   display: block;
 }
@@ -64,6 +80,7 @@ html {
 
 .fullpageMenu{
   position: fixed;
+  z-index: 10000;
   top: -200%;
   left: 0;
   width: 100%;
@@ -92,6 +109,7 @@ html {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  width: 80%;
   
 }
 .fullpageMenu #consoleNav ul li {
@@ -104,9 +122,10 @@ html {
 }
 .fullpageMenu #consoleNav ul li a {
   position: relative;
+  text-align: center;
   color: #fff;
   text-decoration: none;
-  font-size: 2em;
+  font-size: 1.5em;
   line-height: 1em;
   padding-top: 12px;
   display: inline-block;
@@ -115,8 +134,9 @@ html {
 }
 .fullpageMenu #consoleNav ul li a:before {
   content: attr(data-text);
+  font-family: "Open Sans";
   position: absolute;
-  bottom: -120%;
+  bottom: -60%;
   left: 0;
   color: #FFF;
 }
@@ -131,7 +151,7 @@ html {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #FF2941;
+  background-color: #871A85;
   transition: transform 0.5s ease-in-out;
   transform: scaleY(0);
   transform-origin: bottom;
@@ -143,28 +163,174 @@ html {
 }
 #consoleNav img 
 {
-  width: 240px;
+  width: 200px;
 }
 
 .menuicon {
+  display: block;
   position: fixed;
-  top: 50%;
-  right: 50%;
-  width: 100px;
-  height: 100px;
-  background: url(img/video-arcade.png);
-  background-size: 60px ;
+  top: 4%;
+  right: 4%;
+  width: 70px;
+  height:50px;
+  background: url(img/burger.png);
+  background-size: 50px ;
   cursor: pointer;
   background-repeat: no-repeat;
   background-position: 10px;
 }
 .menuicon.active {
   background: url(img/exit.png);
-  background-size: 40px;
+  top: 2%;
+  right: 4%;
+  background-size: 50px;
   cursor: pointer;
   background-repeat: no-repeat;
   background-position: 10px;
 }
+
+#searchBar {
+  min-height: 100%;
+  width: 50%;
+  border: 1px solid #FFF;
+  padding: 0px 7rem;
+  font-size: 2rem;
+  font-weight: 300;
+  font-family: "Open Sans";
+  text-align: center;
+  color: rgb(138, 138, 138);
+  mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
+  transition: all 0.35s ease-in-out 0s;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+#research {
+  text-align: center;
+}
+
+.wrapper {
+  padding-top: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*.neon-wrapper {
+  box-shadow:
+  0 0 0.1vw  0.4vw #fff7f7,   
+  0 0 0.4vw  0.6vw #FE18D3, 
+  0 0   4vw  0.4vw #270245,
+
+  inset 0 0 1.5vw  0.4vw #270245,
+  inset 0 0 0.4vw  0.2vw #FE18D3,
+  inset 0 0 0.5vw  0.2vw #fff7f7;
+  border-radius: 1.5rem;
+}*/
+.neon-text {
+  font-family: neon;
+  font-size: 5rem;
+  color: #fff7f7;
+  padding: 0 3.5rem 0 3.5rem;
+  text-shadow: 
+  .1vw 0vw .25vw #fff7f7, .2vw 0vw .25vw #fff7f7, .4vw 0vw .25vw #fff7f7, 
+
+  .1vw 0vw   0vw #FE18D3, .2vw 0vw   0vw #FE18D3, .4vw 0vw   0vw #FE18D3,
+  .1vw 0vw  .1vw #FE18D3, .2vw 0vw  .1vw #FE18D3, .4vw 0vw  .1vw #FE18D3,
+  .1vw 0vw   2vw #FE18D3, .2vw 0vw   2vw #FE18D3, .4vw 0vw   2vw #FE18D3, 
+
+  .1vw 0vw   1vw #270245, .2vw 0vw   1vw #270245, .4vw 0vw   5vw #270245, 
+  .1vw 0vw   5vw #270245, .2vw 0vw  20vw #270245, .4vw 0vw  10vw #270245,
+  .1vw 0vw  10vw #270245, .2vw 0vw  30vw #270245, .4vw 0vw  10vw #270245;;
+}
+.wrapper span {
+  text-align: center;
+  display: block;
+  color: #fff7f7;
+  font-family: neon;
+  font-size: 1.5rem;
+}
+
+.videoFade {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 100px;
+}
+
+.videoFade video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.videoFade h2 {
+  position: relative;
+  color: #fff;
+  font-size: 3em;
+}
+
+.videoFade p {
+  position: relative;
+  color: #fff;
+  font-size: 1.2em;
+}
+
+
+
+
+.arrow {
+  text-align: center;
+  margin: 28% 0;
+}
+.arrow img {
+  width: 80px;;
+}
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+#subtitle {
+  color: #FFF;
+  font-family: neon;
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+#subtitle::after {
+  content: '|';
+  margin-left: 5px;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+
+
 
 @media (max-width: 991px) {
   .banner {
