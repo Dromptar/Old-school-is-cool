@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
@@ -11,14 +12,40 @@
 <body>
 
 <header>
-  <!-- Main Menu on top page-->
-    <div id="logo"><a href="#"><img src="img/logo2.png" alt=""></a></div>
+  
+  <div class="wrapper">
+    <div class="neon-wrapper">
+      <div class="neon-text">Old School Is Cool</div>
+    </div>
+  </div>
 
-    <div class="wrapper">
-      <div class="neon-wrapper">
-        <div class="neon-text">Old School Is Cool</div>
+  <!-- Main Menu on top page-->
+  <div class="container">
+      <input type="checkbox" name="" id="menuBtn">
+      <div class="menu_overlay">
+        <label for="menuBtn">
+          <i class="fas fa-times"></i>
+        </label>
+        <div class="side side1">
+          <ul class="list">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Plateform</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="side side2"></div>
+      <div class="landing_page">
+        <div class="menu">
+          <label for="menuBtn">
+            <i class="fas fa-bars"></i>
+          </label>
+        </div>
       </div>
     </div>
+
+    <div id="logo"><a href="#"><img src="img/logo2.png" alt=""></a></div>
 
   <!-- Menu for diferents consoles-->
     <div class="fullpageMenu" id="nav">
@@ -34,88 +61,32 @@
           <li><a href="#" data-text="Dreamcast"><img src="img/dreamcast.png" alt=""></a></li>
         </ul>
       </div>
-      <span class="menuicon" id="toggle" onclick="menuToggle()"></span>
     </div>
 
-
-    <nav id="mainMenu">
-      <ul>
-        <li>
-          <a href="#">Home</a>
-        </li>
-        <li>
-          <a href="#">About</a>
-        </li>
-        <li>
-          <a href="#">Games</a>
-        </li>
-        <li>
-          <a href="#">Contact</a>
-        </li>
-        <li>
-          <a href="#"><ion-icon name="cart-outline"></ion-icon></a>
-        </li>
-      </ul>
-    </nav>
-
-    <div>
-      <h2 id="subtitle">Your retro game price comparison website</h2>
+    <div id="welcomingMessage">
+      <p>Hi <span id="nameId"></span> !</p>
+      <!-- <p id="subtitle">And welcome to your retro game price comparison website</p> -->
     </div>
-
-    <div class="arrow bounce">
-      <a href="#"><img src="img/arrowdown2.png" alt=""></a>
-    </div>
-    
-
-    
 
   </header>
 
   <section class="videoFade">
-    <video src="videos/starfall.mp4" autoplay="" muted="" loop=""></video>
+    <video src="videos/purplegrid.mp4" autoplay="" muted="" loop=""></video> 
   <!-- Search bar -->
-  <div id="research">
-    <input id="searchBar"  type="text" name="search" placeholder="Search your game">
-   </div>  </section>
+    <div id="research">
+      <span class="menuicon" id="toggle" onclick="menuToggle()"></span>
+      <form id="form">
+        <input id="input1" type="text" name="input1" placeholder="Give me a game">
+        <input id="input2" type="text" name="input2" placeholder="Which plateform ?">
+        <input id="input3" type="text" name="input3" placeholder="a price ?">
+        <input type="submit" name="input1Submit" value="Add game">
+      </form>   
+    </div>  
+  </section>
+
   <section class="videoFade">
-    <div class="content">
-      <h2>Your title here</h2>
-      <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-        deserunt mollit anim id est laborum."
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
-        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
-         qui officia deserunt mollit anim id est laborum."
-         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-         quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-         nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-        deserunt mollit anim id est laborum."
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
-        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
-        qui officia deserunt mollit anim id est laborum."
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-       deserunt mollit anim id est laborum."
-       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-       incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
-       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
-       eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa 
-       qui officia deserunt mollit anim id est laborum."</p>
+    <h3>Your title here</h3>
+    <div id="catalog" class="content">
     </div>
   </section>
 
@@ -126,9 +97,10 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <script src="https://kit.fontawesome.com/a7e9f794eb.js" crossorigin="anonymous"></script>
-  <script src="js/animations.js"></script>
-  <script src="js/simulador_interactivo.js"></script>
-    
+  <script src="js/animations.js"></script> 
+  <script src="js/VideoGame"></script>-->
+  <script src="js/storage.js"></script> 
+  <script src="js/practice.js"></script>
       
    
 </body>

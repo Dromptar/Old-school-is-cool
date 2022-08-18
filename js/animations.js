@@ -1,3 +1,4 @@
+/* Para mostrar un menu que permite seleccionar una plataforma*/
 function menuToggle() {
     let nav = document.getElementById('nav');
     let toggle = document.getElementById('toggle');
@@ -5,22 +6,31 @@ function menuToggle() {
     toggle.classList.toggle("active");
 }
 
+/* Efecto de scroll que hace mas obscuro la video mas haces scrolling down */
 let video = document.querySelector('video');
 window.addEventListener('scroll', function() {
-    let value = 1 + window.scrollY / -1100;
+    let value = 1 + window.scrollY / -1200;
     video.style.opacity = value;
 })
 
-'use strict';
 
-function typeWriter(el) {
-    const textArray = el.innerHTML.split('');
-    el.innerHTML = '';
-    textArray.forEach((letter, i) =>
-        setTimeout(() => (el.innerHTML += letter), 95 * i)
-    );
-    setInterval(() => typeWriter(el), 8000);
-}
 
-typeWriter(subtitle);
+/* Full screen menu on click*/
+let side1 = document.querySelector(".side1");
+let side2 = document.querySelector(".side2");
+let overlay = document.querySelector(".menu_overlay");
+let open = document.querySelector(".fa-bars");
+let close = document.querySelector(".fa-times");
+
+open.addEventListener("click", () => {
+  overlay.style.transform = "translateX(0)";
+  side2.style.transform = "translateX(0)";
+});
+
+close.addEventListener("click", () => {
+  overlay.style.transform = "translateX(110%)";
+  side2.style.transform = "translateX(-110%)";
+});
+
+
 
