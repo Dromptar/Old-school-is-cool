@@ -1,88 +1,63 @@
 class VideoGame {
 
-    constructor(name, plateform, price) {
+    constructor(name, plateform, price, image) {
         this.name = name.toLowerCase();
         this.price = parseFloat(price);
         this.plateform = plateform;
-        this.rateAverage = function(myArray) {
-            let sum = 0;
-            for( let i = 0; i < myArray.length; i++) {
-                sum += parseInt(myArray[i].rate)
-            }
-            return sum / myArray.length;
-        };
-        this.isExpensive = function(x) {
-            return x > 10;
-        };
-        this.priceDependingOnPlatform = function() {
-            switch (this.platform){
-    
-                case "NES":
-               //5% de aumento
-               return this.price*1.05;
-               Break;
-               
-               case "NINTENDO":
-               //10% de aumento
-               return this.price*1.10;
-               }
-        };
-        // this.displayGames = function(game) {
-    
-        //     let text = `<div>
-        //                 <h1>${game.name}</h1>
-        //                 <p>${game.price}</p>
-        //                 </div>`
-        
-        //     return text;
-        // };
+        this.image = image;
     }
+
 }
 
 const games = [];
-games.push(new VideoGame("Super Mario Bros", "Nes", 10));
-games.push(new VideoGame("Donkey Kong Country", "Super Nes", 8));
-games.push(new VideoGame("Legend of Zelda", "Nes", 15));
-games.push(new VideoGame("Metal Gear Solid", "PS1", 12));
-games.unshift(new VideoGame("Alone in the dark", "Pc", 6));
+games.push(new VideoGame("Super Mario Bros", "Nes", 10, "https://robohash.org/mario" ));
+games.unshift(new VideoGame("Alone in the dark", "Pc", 6,"https://robohash.org/alone"));
+
+const localSave = (key, value) => { localStorage.setItem(key, value)};
+localSave("gamesList", JSON.stringify(games));
 
 let input1 = document.getElementById('input1');
 let input2 = document.getElementById('input2');
 let input3 = document.getElementById('input3');
+let input4 = document.getElementById('input4');
 let form = document.getElementById('form');
+let listViewButton = document.querySelector('#listView');
 
 const addGameToMyList = (e) => {
     e.preventDefault();
-    games.push(new VideoGame(input1.value, input2.value, parseInt(input3.value)));
-    console.log(input1.value);
+    games.push(new VideoGame(input1.value, input2.value, parseInt(input3.value), input4.value));
     console.log(games);
 };
 
-form.addEventListener("submit", addGameToMyList);
+const createCard = (game) => {
+    const col = document.createElement("div");
+    col.className = "col";
+    let content = `<div class="card" style="width: 18rem;">
+                    <img src="${game.image}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${game.name}</h5>
+                        <p class="card-text">
+                        ${game.price} Euros
+                        </p>
+                    </div>
+                </div>`;
 
-let gamesList = "";
-const displayGames = (game) => {
-    
-    let content = `<div>
-                <h1>${game.name}</h1>
-                <p>${game.price}</p>
-                </div>`
+    col.innerHTML = content;
+    document.querySelector("#catalog").append(col);
 
-    return content;
+    //return content;
 };
 
-for(let i = 0; i < games.length; i++) {
-    gamesList += displayGames(games[i]);
+const displayGames = (e) => {
+    e.preventDefault();
+    for(const game of games) {
+        createCard(game);
+        }
 }
 
-const catalog = document.getElementById("catalog");
-catalog.innerHTML = gamesList;
+form.addEventListener("submit", addGameToMyList); // to add game to the list
+listViewButton.addEventListener("click", displayGames); // to display the list of games
 
 
 
 
-// console.log(games.isExpensive);
-
-//    for (const game of games.filter(x => x > 10)) {
-//         console.log(game.name + "'s price is " + game.price);           
-//  }

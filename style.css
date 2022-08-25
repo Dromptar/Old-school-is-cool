@@ -404,13 +404,13 @@ body {
 
 .videoFade h2 {
   position: relative;
-  color: #fff;
+  color: #270245;
   font-size: 3em;
 }
 
 .videoFade p {
   position: relative;
-  color: #fff;
+  color: #270245;
   font-size: 1.2em;
 }
 
@@ -429,6 +429,10 @@ body {
   content: '|';
   margin-left: 5px;
   animation: blink 0.7s infinite;
+}
+
+#form {
+  display: flex;
 }
 
 @keyframes blink {
