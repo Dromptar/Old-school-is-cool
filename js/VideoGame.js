@@ -23,12 +23,17 @@ let input4 = document.getElementById('input4');
 let form = document.getElementById('form');
 let listViewButton = document.querySelector('#listView');
 
+
+// recuperando values de los input en el DOM y push al array games
 const addGameToMyList = (e) => {
     e.preventDefault();
-    games.push(new VideoGame(input1.value, input2.value, parseInt(input3.value), input4.value));
+    // Eso todavia no funciona pero quizé probar los operadores avanzados
+    games.includes(input1.value) ? alert("This game is already is the list.") : games.push(new VideoGame(input1.value, input2.value, parseInt(input3.value), input4.value));        
+    console.log(input1.value);
     console.log(games);
 };
 
+// creating a card via bootstrap directo en el Dom para cada objeto del array "games"
 const createCard = (game) => {
     const col = document.createElement("div");
     col.className = "col";
@@ -45,14 +50,21 @@ const createCard = (game) => {
     col.innerHTML = content;
     document.querySelector("#catalog").append(col);
 
-    //return content;
 };
 
+// funcion para mostrar la lista/array de juegos guardados via los input
 const displayGames = (e) => {
     e.preventDefault();
-    for(const game of games) {
-        createCard(game);
-        }
+    const cat  = document.getElementById("catalog");
+    const col = document.querySelector(".col");
+    if(cat.contains(col)) {
+        Swal.fire("Your list is already displayed.");
+    } else {
+        for(const game of games) {
+            createCard(game);
+            }
+    }
+    
 }
 
 form.addEventListener("submit", addGameToMyList); // to add game to the list
