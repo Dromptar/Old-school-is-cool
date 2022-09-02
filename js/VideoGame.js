@@ -58,7 +58,11 @@ const displayGames = (e) => {
     const cat  = document.getElementById("catalog");
     const col = document.querySelector(".col");
     if(cat.contains(col)) {
-        Swal.fire("Your list is already displayed.");
+        Swal.fire({
+            imageUrl: "img/logopanda.png",
+            imageHeight: 100,
+            text:"Your list is already displayed."
+    });
     } else {
         for(const game of games) {
             createCard(game);
