@@ -204,26 +204,18 @@ body {
   padding: 20px;
   z-index: 0;
 }
-
-
-.fullpageMenu{
-  position: fixed;
-  z-index: 10000;
-  top: -200%;
-  left: 0;
+.consoleList {
+  height: 100vh;
+}
+.consoleList h2 {
+  font-family: neon;
+  font-size: 3rem;
+  color: #FEFF38;
+  display: block;
   width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #111;
-  transition: 0.5s;
+  text-align: center;
 }
-.fullpageMenu.active {
-  top: 0;
-}
-
-.fullpageMenu #consoleNav {
+#consoleNav {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -232,110 +224,27 @@ body {
   height: 100vh;
   overflow-y: auto;
 }
-.fullpageMenu #consoleNav ul {
+#consoleNav ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   width: 80%;
-  
+  margin: auto;
 }
-.fullpageMenu #consoleNav ul li {
-  position: relative;
-  list-style: none;
-  padding: 0 20px;
-  margin: 5px 0;
-  overflow: hidden;
-  display: table;
+#consoleNav ul li {
+  padding: 10px;
+ margin: 20px;  
 }
-.fullpageMenu #consoleNav ul li a {
-  position: relative;
-  text-align: center;
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.5em;
-  line-height: 1em;
-  padding-top: 12px;
-  display: inline-block;
-  text-transform: uppercase;
-  transition: 0.5s ease-in-out;
-}
-.fullpageMenu #consoleNav ul li a:before {
-  content: attr(data-text);
-  font-family: "Open Sans";
-  position: absolute;
-  bottom: -60%;
-  left: 0;
-  color: #FFF;
-}
-.fullpageMenu #consoleNav ul li:hover a {
-  transform: translateY(-100%);
-  color: #fff
-}
-.fullpageMenu #consoleNav ul li:before{
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+#consoleNav li:hover {
   background-color: #871A85;
   transition: transform 0.5s ease-in-out;
-  transform: scaleY(0);
-  transform-origin: bottom;
-}
-.fullpageMenu #consoleNav ul li:hover:before {
-  transition: transform 0.5s ease-in-out;
-  transform: scaleY(1);
-  transform-origin: top;
 }
 #consoleNav img 
 {
   width: 200px;
 }
 
-.menuicon {
-  display: block;
-  position: relative;
-  margin: 0 auto;
-  width: 150px;
-  height:150px;
-  background: url(img/logopanda.png);
-  background-size: 150px ;
-  cursor: pointer;
-  background-repeat: no-repeat;
-}
-.menuicon.active {
-  background: url(img/exit.png);
-  z-index: 10000000;
-  position: absolute;
-  top: 2%;
-  right: 4%;
-  background-size: 50px;
-  cursor: pointer;
-  background-repeat: no-repeat;
-  background-position: 10px;
-}
-
-/* #searchBar {
-  min-height: 100%;
-  width: 100%;
-  border: 1px solid #FFF;
-  padding: 0px 7rem;
-  font-size: 2rem;
-  font-weight: 300;
-  font-family: "Open Sans";
-  text-align: center;
-  color: rgb(138, 138, 138);
-  mask-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #ffffff 25%, #ffffff 75%, rgba(255, 255, 255, 0) 100%);
-  transition: all 0.35s ease-in-out 0s;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1), inset 0 0 1px rgba(255, 255, 255, 0.6);
-} */
-
-#research {
-  text-align: center;
-}
 
 .wrapper {
   padding-top: 10px;
@@ -448,8 +357,6 @@ body {
   font-size: 3rem;
   text-align: center;
   display: block;
-  width: 50%;
-  margin: 0 auto;
 }
 .gameList {
   width: 100vw;

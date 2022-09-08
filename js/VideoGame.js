@@ -9,12 +9,12 @@ class VideoGame {
 
 }
 
-const games = [];
-games.push(new VideoGame("Super Mario Bros", "Nes", 10, "https://robohash.org/mario" ));
-games.unshift(new VideoGame("Alone in the dark", "Pc", 6,"https://robohash.org/alone"));
+const myGames = [];
+myGames.push(new VideoGame("Super Mario Bros", "Nes", 10, "https://robohash.org/mario" ));
+myGames.unshift(new VideoGame("Alone in the dark", "Pc", 6,"https://robohash.org/alone"));
 
 const localSave = (key, value) => { localStorage.setItem(key, value)};
-localSave("gamesList", JSON.stringify(games));
+localSave("gamesList", JSON.stringify(myGames));
 
 let input1 = document.getElementById('input1');
 let input2 = document.getElementById('input2');
@@ -28,9 +28,9 @@ let listViewButton = document.querySelector('#listView');
 const addGameToMyList = (e) => {
     e.preventDefault();
     // Eso todavia no funciona pero quizé probar los operadores avanzados
-    games.includes(input1.value) ? alert("This game is already is the list.") : games.push(new VideoGame(input1.value, input2.value, parseInt(input3.value), input4.value));        
+    myGames.includes(input1.value) ? alert("This game is already is the list.") : myGames.push(new VideoGame(input1.value, input2.value, parseInt(input3.value), input4.value));        
     console.log(input1.value);
-    console.log(games);
+    console.log(myGames);
 };
 
 // creating a card via bootstrap directo en el Dom para cada objeto del array "games"
@@ -48,14 +48,14 @@ const createCard = (game) => {
                 </div>`;
 
     col.innerHTML = content;
-    document.querySelector("#catalog").append(col);
+    document.querySelector("#myGamesCatalog").append(col);
 
 };
 
 // funcion para mostrar la lista/array de juegos guardados via los input
 const displayGames = (e) => {
     e.preventDefault();
-    const cat  = document.getElementById("catalog");
+    const cat  = document.getElementById("myGamesCatalog");
     const col = document.querySelector(".col");
     if(cat.contains(col)) {
         Swal.fire({
@@ -64,7 +64,7 @@ const displayGames = (e) => {
             text:"Your list is already displayed."
     });
     } else {
-        for(const game of games) {
+        for(const game of myGames) {
             createCard(game);
             }
     }
