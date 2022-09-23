@@ -1,3 +1,7 @@
+
+
+// I create this class file in order to practice, but i finally didn't use it. I just leave it herre to show my skills
+
 class VideoGame {
 
     constructor(name, plateform, price, image) {
